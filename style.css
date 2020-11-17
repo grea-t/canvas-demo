@@ -92,12 +92,12 @@ body {
 
 .sizes .thin {
     height: 0;
-    width: 25px;
+    width: 30px;
     border-top: 5px solid black;
 }
 
 .sizes .thick {
     height: 0;
-    width: 25px;
+    width: 30px;
     border-top: 10px solid black;
 }
