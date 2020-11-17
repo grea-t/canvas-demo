@@ -120,11 +120,13 @@ function listenToUser(canvas) {
                 context.clearRect(x - 5, y - 5, 10, 10)
             } else {
                 let newPoint = { x: x, y: y }
+                drawCircle(lastPoint.x,lastPoint.y,lineWidth/2)
                 drawLine(lastPoint.x, lastPoint.y, newPoint.x, newPoint.y)
                 lastPoint = newPoint
             }
         }
         canvas.ontouchend = function () {
+            drawCircle(lastPoint.x,lastPoint.y,lineWidth/2)
             using = false
         }
     } else {
@@ -148,13 +150,15 @@ function listenToUser(canvas) {
             if (eraserEnabled) {
                 context.clearRect(x - 5, y - 5, 10, 10)
             } else {
-                var newPoint = { x: x, y: y }
+                let newPoint = {x: x, y: y};
                 drawLine(lastPoint.x, lastPoint.y, newPoint.x, newPoint.y)
+                drawCircle(lastPoint.x,lastPoint.y,lineWidth/2)
                 lastPoint = newPoint
             } 
         }
         //松开鼠标
         canvas.onmouseup = function () {
+            drawCircle(lastPoint.x,lastPoint.y,lineWidth/2)
             using = false
         }
     }
